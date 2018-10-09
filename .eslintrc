@@ -31,7 +31,9 @@
     "react/react-in-jsx-scope": "error",
     "react/self-closing-comp": "warn",
     "react/jsx-wrap-multilines": "warn",
- 
+
+    "flowtype/no-types-missing-file-annotation": 0,
+
     "generator-star-spacing": "off",
     "new-cap": "off",
     "object-curly-spacing": "off",
