@@ -17,7 +17,8 @@ import type { ObjectHash, PropertyFilter, Delta } from 'jsondiffpatch';
 type DefaultProps = {
   supportImmutable: boolean,
   theme: Theme,
-  invertTheme: boolean
+  invertTheme: boolean,
+  expandDiffs: boolean
 };
 
 type AppState = Object;
@@ -127,7 +128,8 @@ export default class DevtoolsInspector extends PureComponent<DefaultProps, Props
     select: (state) => state,
     supportImmutable: false,
     theme: 'inspector',
-    invertTheme: true
+    invertTheme: true,
+    expandDiffs: false
   };
 
   componentDidMount() {

@@ -14,6 +14,7 @@ type Props = {
   styling: StylingFunction,
   base16Theme: Base16Theme,
   invertTheme: boolean,
+  expandDiffs: boolean,
   labelRenderer: LabelRenderer,
   isWideLayout: boolean
 };
@@ -74,7 +75,7 @@ export default class JSONDiff extends PureComponent<void, Props, State> {
   }
 
   render() {
-    const { styling, labelRenderer, invertTheme, delta } = this.props;
+    const { styling, labelRenderer, invertTheme, expandDiffs, delta } = this.props;
 
     if (!delta) {
       return (
@@ -94,7 +95,7 @@ export default class JSONDiff extends PureComponent<void, Props, State> {
         valueRenderer={this.valueRenderer}
         postprocessValue={prepareDelta}
         isCustomNode={Array.isArray}
-        shouldExpandNode={expandFirstLevel}
+        shouldExpandNode={expandDiffs || expandFirstLevel}
         hideRoot
       />
     );

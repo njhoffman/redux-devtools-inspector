@@ -16,10 +16,10 @@ type Props = {
 };
 
 const DiffTab = (
-  { delta, styling, base16Theme, invertTheme, labelRenderer, isWideLayout }: Props
+  { delta, styling, base16Theme, invertTheme, labelRenderer, isWideLayout, expandDiffs }: Props
 ): React$Element<*> =>
   <JSONDiff
-    {...{ delta, styling, base16Theme, invertTheme, labelRenderer, isWideLayout }}
+    {...{ delta, styling, base16Theme, invertTheme, labelRenderer, isWideLayout, expandDiffs }}
   />;
 
 export default DiffTab;
