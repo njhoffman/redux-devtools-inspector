@@ -1,5 +1,5 @@
 // @flow
-import diffPatcher from 'jsondiffpatch';
+import { DiffPatcher } from 'jsondiffpatch/src/diffpatcher';
 
 import type { ObjectHash, PropertyFilter, JsonDiffPatcher } from 'jsondiffpatch';
 
@@ -13,7 +13,7 @@ const defaultPropertyFilter = (name, context) =>
   typeof context.left[name] !== 'function' &&
   typeof context.right[name] !== 'function';
 
-const defaultDiffPatcher = diffPatcher.create({
+const defaultDiffPatcher = new DiffPatcher({
   arrays: { detectMove: false },
   objectHash: defaultObjectHash,
   propertyFilter: defaultPropertyFilter
@@ -26,7 +26,7 @@ export default function createDiffPatcher(
     return defaultDiffPatcher;
   }
 
-  return diffPatcher.create({
+  return new DiffPatcher({
     arrays: { detectMove: false },
     objectHash: objectHash || defaultObjectHash,
     propertyFilter: propertyFilter || defaultPropertyFilter
