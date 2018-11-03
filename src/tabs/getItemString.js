@@ -33,7 +33,7 @@ function getShortTypeString(val: any, diff?: boolean): string {
   case 'Iterable':
     return '(…)';
   case 'Array':
-    return val.length > 0 ? '[…]' : '[]';
+    return val && val.length > 0 ? '[…]' : '[]';
   case 'Null':
     return 'null';
   case 'Undefined':
